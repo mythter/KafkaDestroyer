@@ -25,16 +25,10 @@ This tool uses the [**Ace Editor**](https://github.com/ajaxorg/ace) for message 
 
 ## 📸 Screenshots
 
-<img width="934" height="664" alt="image" src="https://github.com/user-attachments/assets/a41a8ca4-62a5-4b2c-83a3-0605716340c7" />
+![image](https://github.com/user-attachments/assets/a41a8ca4-62a5-4b2c-83a3-0605716340c7)
 
-<br><br>
+![image](https://github.com/user-attachments/assets/b8d06daa-cd1f-4c3f-8d3d-46c850e2212d)
 
-<img width="1011" height="754" alt="image" src="https://github.com/user-attachments/assets/b8d06daa-cd1f-4c3f-8d3d-46c850e2212d" />
+![image](https://github.com/user-attachments/assets/a36941f3-20fd-4617-88a0-a2ca98111910)
 
-<br><br>
-
-<img width="1011" height="754" alt="image" src="https://github.com/user-attachments/assets/a36941f3-20fd-4617-88a0-a2ca98111910" />
-
-<br><br>
-
-<img width="1011" height="754" alt="image" src="https://github.com/user-attachments/assets/04d23a03-3816-4abb-ade2-e039089a2e8c" />
+![image](https://github.com/user-attachments/assets/04d23a03-3816-4abb-ade2-e039089a2e8c)
