@@ -17,8 +17,6 @@ namespace KafkaDestroyer.Controls
 
 		public new event EventHandler<TopicMessage>? Click;
 
-		private bool _isEditing;
-
 		private readonly TopicMessage _message;
 
 		public TopicMessage Message => _message;
@@ -33,6 +31,19 @@ namespace KafkaDestroyer.Controls
 		{
 			get => TopicMessageLabel.ForeColor;
 			set => TopicMessageLabel.ForeColor = value;
+		}
+
+		public new int Height
+		{
+			get => base.Height;
+			set
+			{
+				base.Height = value;
+				if (Height > 0)
+				{
+					SetButtonsSize(value);
+				}
+			}
 		}
 
 		// in case double click will be needed in the future
@@ -52,6 +63,33 @@ namespace KafkaDestroyer.Controls
 			TopicMessageLabel.Text = message.Title;
 
 			ShowButtons(false);
+		}
+
+		private void SetButtonsSize(int controlHeight)
+		{
+			var padding = 10;
+			var size = controlHeight - padding;
+
+			SendMessageBtn.Height = size;
+
+			DeleteMessageBtn.Width = size;
+			DeleteMessageBtn.Height = size;
+
+			var m1 = DeleteMessageBtn.Margin;
+			var m2 = SendMessageBtn.Margin;
+
+			int spacing = m1.Right + m2.Left;
+
+			int y = (ClientSize.Height - size) / 2;
+
+			int totalButtonsWidth = DeleteMessageBtn.Width + SendMessageBtn.Width + spacing;
+			int offsetX = ClientSize.Width - totalButtonsWidth;
+
+			var x1 = offsetX - (padding / 2);
+			int x2 = x1 + DeleteMessageBtn.Width + spacing;
+
+			DeleteMessageBtn.SetBounds(x1, y, size, size);
+			SendMessageBtn.SetBounds(x2, y, SendMessageBtn.Width, size);
 		}
 
 		private void TopicMessage_MouseEnter(object sender, EventArgs e)

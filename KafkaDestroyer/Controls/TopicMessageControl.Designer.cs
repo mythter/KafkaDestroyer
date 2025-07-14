@@ -67,6 +67,7 @@
 			SendMessageBtn.Font = new Font("Segoe UI", 10F);
 			SendMessageBtn.ForeColor = Color.White;
 			SendMessageBtn.Location = new Point(501, 3);
+			SendMessageBtn.Margin = new Padding(3, 5, 3, 5);
 			SendMessageBtn.Name = "SendMessageBtn";
 			SendMessageBtn.Size = new Size(108, 34);
 			SendMessageBtn.TabIndex = 4;
