@@ -35,16 +35,17 @@ namespace KafkaDestroyer.Controls
 			set => TopicMessageLabel.ForeColor = value;
 		}
 
-		private System.Windows.Forms.Timer clickTimer;
-		private bool doubleClickFired = false;
+		// in case double click will be needed in the future
+		//private System.Windows.Forms.Timer clickTimer;
+		//private bool doubleClickFired = false;
 
 		public TopicMessageControl(TopicMessage message)
 		{
 			InitializeComponent();
 
-			clickTimer = new System.Windows.Forms.Timer();
-			clickTimer.Interval = (int)(SystemInformation.DoubleClickTime * 0.4);
-			clickTimer.Tick += ClickTimer_Tick;
+			//clickTimer = new System.Windows.Forms.Timer();
+			//clickTimer.Interval = (int)(SystemInformation.DoubleClickTime * 0.4);
+			//clickTimer.Tick += ClickTimer_Tick;
 
 			_message = message ?? throw new ArgumentNullException(nameof(message));
 
@@ -92,27 +93,28 @@ namespace KafkaDestroyer.Controls
 
 		private void TopicMessageLabel_Click(object sender, EventArgs e)
 		{
-			doubleClickFired = false;
-			clickTimer.Start();
+			//doubleClickFired = false;
+			//clickTimer.Start();
+
+			Click?.Invoke(this, _message);
 		}
 
 		private void TopicMessageLabel_DoubleClick(object sender, EventArgs e)
 		{
-			clickTimer.Stop();
-			doubleClickFired = true;
+			//clickTimer.Stop();
+			//doubleClickFired = true;
 
-			int d = 3;
 			// send event
 		}
 
-		private void ClickTimer_Tick(object? sender, EventArgs e)
-		{
-			clickTimer.Stop();
+		//private void ClickTimer_Tick(object? sender, EventArgs e)
+		//{
+		//	clickTimer.Stop();
 
-			if (!doubleClickFired)
-			{
-				Click?.Invoke(this, _message);
-			}
-		}
+		//	if (!doubleClickFired)
+		//	{
+		//		Click?.Invoke(this, _message);
+		//	}
+		//}
 	}
 }
