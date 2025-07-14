@@ -25,7 +25,7 @@ This tool uses the [**Ace Editor**](https://github.com/ajaxorg/ace) for message 
 
 ## 📸 Screenshots
 
-![image](https://github.com/user-attachments/assets/a41a8ca4-62a5-4b2c-83a3-0605716340c7)
+![image](https://github.com/user-attachments/assets/46a775e8-86d7-4350-9b39-371add032081)
 
 ![image](https://github.com/user-attachments/assets/b8d06daa-cd1f-4c3f-8d3d-46c850e2212d)
 
