@@ -70,10 +70,46 @@ namespace KafkaDestroyer
 
 		private async void MainForm_Load(object sender, EventArgs e)
 		{
-			string path = Path.Combine(Application.StartupPath, "Resources/editor.html");
-			await MessageEditor.Init(path, Settings.Default.EditorTheme);
+			SetFormSizeAndLocation();
+
+			string editorPath = Path.Combine(Application.StartupPath, "Resources/editor.html");
+			await MessageEditor.Init(editorPath, Settings.Default.EditorTheme);
 
 			await InitKafkaTopics();
+		}
+
+		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			Settings.Default.KafkaHost = KafkaHostTextBox.Text;
+			Settings.Default.FormSize = Size;
+			Settings.Default.FormLocation = Location;
+			Settings.Default.Save();
+		}
+
+		private void SetFormSizeAndLocation()
+		{
+			if (Settings.Default.FormSize != Size.Empty)
+			{
+				Size = Settings.Default.FormSize;
+			}
+
+			if (Settings.Default.FormLocation != Point.Empty)
+			{
+				var screenBounds = Screen.FromPoint(Settings.Default.FormLocation).WorkingArea;
+				var location = Settings.Default.FormLocation;
+				if (screenBounds.Contains(new Rectangle(location, Size)))
+				{
+					Location = location;
+				}
+				else
+				{
+					StartPosition = FormStartPosition.CenterScreen;
+				}
+			}
+			else
+			{
+				StartPosition = FormStartPosition.CenterScreen;
+			}
 		}
 
 		private async Task InitKafkaTopics()
@@ -107,12 +143,6 @@ namespace KafkaDestroyer
 			{
 				TopicsListControl.ControlsEnabled = true;
 			}
-		}
-
-		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-		{
-			Settings.Default.KafkaHost = KafkaHostTextBox.Text;
-			Settings.Default.Save();
 		}
 
 		private void RestoreSettings()
