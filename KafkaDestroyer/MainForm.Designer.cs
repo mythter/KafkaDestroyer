@@ -83,6 +83,7 @@
 			TopicsListControl.TopicFontSize = 12F;
 			TopicsListControl.TopicHeight = 50;
 			TopicsListControl.TopicMargin = new Padding(2);
+			TopicsListControl.TopicNameText = "";
 			TopicsListControl.TopicSelectedBackColor = Color.Gray;
 			TopicsListControl.TopicSelectedTextColor = Color.White;
 			TopicsListControl.TopicTextColor = Color.LightGray;
@@ -97,7 +98,7 @@
 			MessagesControlList.Location = new Point(0, 0);
 			MessagesControlList.MessageBackColor = Color.FromArgb(99, 99, 99);
 			MessagesControlList.MessageFont = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-			MessagesControlList.MessageHeight = null;
+			MessagesControlList.MessageHeight = 55;
 			MessagesControlList.MessageSelectedBackColor = Color.DodgerBlue;
 			MessagesControlList.MessageSelectedTextColor = Color.White;
 			MessagesControlList.MessageTextColor = Color.WhiteSmoke;
@@ -125,7 +126,7 @@
 			ChooseTopicLabel.Name = "ChooseTopicLabel";
 			ChooseTopicLabel.Size = new Size(614, 572);
 			ChooseTopicLabel.TabIndex = 3;
-			ChooseTopicLabel.Text = "Choose or create the topic you want to sent message to";
+			ChooseTopicLabel.Text = "Choose or create the topic you want to send message to";
 			ChooseTopicLabel.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// MessageEditor
