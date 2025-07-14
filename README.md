@@ -23,6 +23,11 @@ This tool uses the [**Ace Editor**](https://github.com/ajaxorg/ace) for message 
 | Remove line         | `Ctrl + Shift + D`|
 | Duplicate selection | `Ctrl + D`        |
 
+## ⚙️ Requirements
+
+- [.NET 8 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0/runtime) or higher
+- Supported OS: Windows
+
 ## 📸 Screenshots
 
 ![image](https://github.com/user-attachments/assets/46a775e8-86d7-4350-9b39-371add032081)
