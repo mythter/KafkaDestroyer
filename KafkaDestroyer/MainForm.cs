@@ -133,14 +133,22 @@ namespace KafkaDestroyer
 
 		private void UpdateKafkaHost(string kafkaHost)
 		{
+			if (string.IsNullOrWhiteSpace(kafkaHost))
+			{
+				_adminClientConfig = null;
+				_producerConfig = null;
+
+				return;
+			}
+
 			_adminClientConfig = new AdminClientConfig
 			{
-				BootstrapServers = KafkaHostTextBox.Text
+				BootstrapServers = kafkaHost
 			};
 
 			_producerConfig = new ProducerConfig
 			{
-				BootstrapServers = KafkaHostTextBox.Text
+				BootstrapServers = kafkaHost
 			};
 		}
 
